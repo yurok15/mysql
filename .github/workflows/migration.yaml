@@ -12,10 +12,7 @@ jobs:
         run: |
           ls -l
           ls -l ./migrate/schema/
-      - name: Compose
-        uses: isbang/compose-action@v1.3.2
-        with:
-          compose-file: "./migrate/docker-compose.yml"
+          cd ./migrate/; docker-compose up
 
 
 
