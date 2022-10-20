@@ -8,6 +8,10 @@ jobs:
     steps:
       - name: Checking out code from the repository
         uses: actions/checkout@v2
+      - name: list
+        run: |
+          ls -l
+          ls -l ./migrate/schema/
       - name: Compose
         uses: isbang/compose-action@v1.3.2
         with:
