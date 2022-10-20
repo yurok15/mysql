@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  migrate:
+    image: migrate/migrate
+    networks:
+      - mysql
+    volumes:
+      - ./schema:/var/schema
+    command: ["-path", "/var/schema", "-database",  "mysql://root:Hui2oe7thaeshin1oohai5bi9@tcp(master:3306)/library", "up"]
+networks:
+  mysql:
+    name: mysql
+    driver: bridge
+    attachable: true
