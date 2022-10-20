@@ -1,0 +1,19 @@
+name: MySQL Migrations
+
+on: [push]
+
+jobs:
+  migration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out code from the repository
+        uses: actions/checkout@v2
+    container:
+      image: migrate/migrate
+      volumes:
+        - ./schema:/var/schema
+      command: ["-path", "/var/schema", "-database",  "mysql://root:Hui2oe7thaeshin1oohai5bi9@tcp(18.223.237.146:4406)/library", "up"]
+
+
+
+
